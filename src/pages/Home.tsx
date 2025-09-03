@@ -3,6 +3,7 @@ import HamburgerMenu from '../components/HamburgerMenu.tsx';
 import SearchBar from '../components/SearchBar.tsx';
 import Cards from '../components/Cards.tsx';
 import recipesData from '../testing-data/data.json';
+import Button from '@mui/material/Button';
 
 function Home() {
   return (
@@ -11,11 +12,14 @@ function Home() {
       <h1>Recipe Book</h1>
       <HamburgerMenu>
         <nav>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li><a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</a></li>
-            <li><a href="/recipes" style={{ color: 'inherit', textDecoration: 'none' }}>Recipes</a></li>
-            <li><a href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About</a></li>
-          </ul>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <Button fullWidth variant="contained" sx={{ mb: 1 }} href="/">Home</Button>
+            <Button fullWidth variant="contained" sx={{ mb: 1 }} href="/recipes">Recipes</Button>
+            <Button fullWidth variant="contained" sx={{ mb: 1 }} href="/ask-ai">Ask AI for a recipe</Button>
+            <Button fullWidth variant="contained" sx={{ mb: 1 }} href="/nearby-fast-food">Find a nearby fast food</Button>
+            <Button fullWidth variant="contained" sx={{ mb: 1 }} href="/shopping-list">Shopping list</Button>
+            <Button fullWidth variant="contained" sx={{ mb: 1 }} href="/calendar">Calendar</Button>
+          </div>
         </nav>
       </HamburgerMenu>
     <SearchBar options={["Apple Pie", "Banana Bread", "Carrot Cake", "Doughnuts", "Eclairs"]} />
